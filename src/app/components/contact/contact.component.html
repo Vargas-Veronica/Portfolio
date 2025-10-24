@@ -3,7 +3,9 @@
       <h2 class="text-2xl md:text-4xl font-extrabold text-center text-white mb-12">
         Contáctame
       </h2>
-      <form action="#" method="POST" class="max-w-xl mx-auto space-y-6">
+      <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" novalidate class="max-w-xl mx-auto space-y-6">
+        <input type="hidden" name="form-name" value="contact" />
+        <p class="hidden"><label>Don’t fill this out if you're human: <input name="bot-field" /></label></p>
         <div>
           <label for="name" class="block mb-2 text-sm font-medium text-white">Nombre</label>
           <input type="text" id="name" name="name" required class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500">

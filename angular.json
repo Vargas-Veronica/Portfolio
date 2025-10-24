@@ -48,11 +48,11 @@
               ],
               "outputHashing": "all"
             },
-            "development": {
-              "optimization": false,
-              "extractLicenses": false,
-              "sourceMap": true
-            }
+              "development": {
+                "optimization": false,
+                "extractLicenses": false,
+                "sourceMap": false
+              }
           },
           "defaultConfiguration": "production"
         },
