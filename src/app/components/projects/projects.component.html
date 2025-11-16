@@ -108,29 +108,10 @@
     <div class="project-row flex flex-row w-full">
       <div
         class="project-image-container w-1/2"
-        (mouseenter)="showOverlay(p.img, '80vw', '80vh')"
+        (mouseenter)="showOverlay(p.img, '95vw', '95vh')"
         (mouseleave)="hideOverlay()"
       >
         <img [src]="p.img" [alt]="p.title" />
-        <button
-          class="play-overlay"
-          (click)="openVideoModal(p.demoVideo, p.poster)"
-          aria-label="Ver demo"
-        >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-          >
-            <polygon points="5 3 19 12 5 21 5 3"></polygon>
-          </svg>
-        </button>
       </div>
       <div class="project-meta flex flex-col items-center text-center m-2 p-1 w-1/2">
         <p>
@@ -152,32 +133,4 @@
   [ngStyle]="{ 'max-width': overlayMaxWidth, 'max-height': overlayMaxHeight }"
 >
   <img [src]="overlayImageSrc" alt="Foto ampliada del proyecto" />
-</div>
-
-<div
-  class="video-modal-backdrop"
-  *ngIf="modalOpen"
-  role="dialog"
-  aria-modal="true"
->
-  <div class="video-modal" role="document">
-    <button
-      #modalClose
-      class="modal-close"
-      (click)="closeModal()"
-      aria-label="Cerrar"
-    >
-      ×
-    </button>
-    <div class="video-wrapper">
-      <video
-        *ngIf="modalVideoSrc"
-        [src]="modalVideoSrc"
-        [poster]="modalPoster"
-        controls
-        autoplay
-        playsinline
-      ></video>
-    </div>
-  </div>
 </div>

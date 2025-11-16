@@ -7,11 +7,12 @@ import { FooterComponent } from './components/footer/footer.component';
 import { HeroComponent } from './components/hero/hero.component';
 import { initFlowbite } from 'flowbite';
 import { ContactComponent } from "./components/contact/contact.component";
+import { ProjectsComponent } from "./components/projects/projects.component";
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, HeaderComponent, FooterComponent, RouterLink, HeroComponent, ContactComponent],
+  imports: [RouterOutlet, HeaderComponent, FooterComponent, RouterLink, HeroComponent, ContactComponent, ProjectsComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })

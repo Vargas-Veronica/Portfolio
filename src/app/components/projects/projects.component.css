@@ -6,14 +6,23 @@
 	border-radius: 8px;
 	background: #000;
 	cursor: zoom-in;
+	transition: transform 200ms ease-out;
+	/* configurable hover zoom (same size for all images) */
+	--hover-zoom: 1.18;
 }
 
 .project-image-container img {
 	width: 100%;
 	height: 100%;
-	object-fit: cover;
-	transition: transform 200ms ease-out, transform-origin 10ms;
+	object-fit: contain;
+	transition: transform 300ms cubic-bezier(.2,.9,.2,1);
 	will-change: transform;
+	transform-origin: center center;
+}
+
+/* scale the image itself on hover to avoid layout shifts */
+.project-image-container:hover img {
+	transform: scale(var(--hover-zoom));
 }
 
 /* Make layout responsive: stack on tablet and smaller */
@@ -21,8 +30,7 @@
 	.project-row { flex-direction: column; align-items: center; }
 	.project-image-container { width: 100%; max-width: 720px; height: 300px; }
 	.project-meta { width: 100%; }
-	.project-image-container img { object-fit: cover; height: 100%; }
-	.play-overlay { right: 8px; bottom: 8px; padding: 6px; }
+	.project-image-container img { object-fit: contain; height: 100%; }
 }
 
 /* Smaller screens: tighten image height */
@@ -58,84 +66,7 @@
 .image-overlay img {
 	width: 100%;
 	height: 100%;
-	object-fit: contain; /* show the full image scaled */
-}
-
-/* Smaller button style */
-.small-btn { font-size: 0.75rem; padding: 0.25rem 0.5rem; }
-
-/* Video modal styles */
-.video-modal-backdrop {
-	position: fixed;
-	inset: 0;
-	background: rgba(0,0,0,0.6);
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	z-index: 100;
-}
-
-.video-modal {
-	background: #000;
-	padding: 12px;
-	border-radius: 8px;
-	max-width: 90vw;
-	max-height: 90vh;
-	box-shadow: 0 10px 30px rgba(0,0,0,0.6);
-}
-
-.video-modal .video-wrapper {
-	max-width: 100%;
-	max-height: calc(90vh - 48px); /* leave room for padding and close button */
-	overflow: auto;
-}
-
-.video-modal video {
-	display: block;
-	width: 100%;
-	height: auto;
-	max-height: calc(90vh - 48px);
 	object-fit: contain;
-}
-
-.modal-close {
-	position: absolute;
-	right: 1rem;
-	top: 1rem;
-	background: transparent;
-	color: #fff;
-	border: none;
-	font-size: 1.5rem;
-	cursor: pointer;
-}
-
-/* Play overlay button on thumbnails */
-.project-image-container { position: relative; }
-.play-overlay {
-	position: absolute;
-	inset: auto 12px 12px auto;
-	right: 12px;
-	bottom: 12px;
-	background: rgba(0,0,0,0.6);
-	border: none;
-	color: #fff;
-	padding: 8px;
-	border-radius: 9999px;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	cursor: pointer;
-}
-.play-overlay svg { width: 18px; height: 18px; }
-
-
-
-
-/* Responsive modal video sizing */
-.video-modal video { width: 90vw; max-width: 1200px; height: auto; }
-@media (max-width: 640px) {
-	.video-modal video { width: 95vw; }
-	.modal-close { right: 0.5rem; top: 0.5rem; }
 }
 
 .flex { display:flex; }
@@ -153,6 +84,8 @@
 .h-40 { height:10rem; }
 .w-4 { width:1rem; }
 .h-4 { height:1rem; }
+.w-full { width:100%; }
+.h-full { height:100%; }
 .w-full { width:100%; }
 .h-full { height:100%; }
 
