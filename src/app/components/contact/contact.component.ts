@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterLink } from '@angular/router';
+
 @Component({
   selector: 'app-contact',
   standalone: true,
@@ -9,6 +10,10 @@ import { RouterLink } from '@angular/router';
   styleUrl: './contact.component.css'
 })
 export class ContactComponent {
-  // Using Netlify Forms (no client code required). Keep component lightweight.
+
+  onSubmit() {
+    alert('¡Mensaje enviado exitosamente! Gracias por contactarme.');
+    // Aquí puedes agregar lógica para enviar el email si tienes un backend
+  }
 
 }
