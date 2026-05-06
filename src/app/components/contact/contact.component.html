@@ -3,8 +3,26 @@
       <h2 class="text-2xl md:text-4xl font-extrabold text-center text-white mb-12">
         Contáctame
       </h2>
-      <form (ngSubmit)="onSubmit()" name="contact" novalidate class="max-w-xl mx-auto space-y-6">
+
+      <div *ngIf="submitted" class="max-w-xl mx-auto text-center bg-white rounded-lg p-8">
+        <p class="text-indigo-700 font-semibold text-xl">¡Mensaje enviado exitosamente!</p>
+        <p class="text-gray-600 mt-2">Gracias por contactarme, te responderé pronto.</p>
+      </div>
+
+      <form
+        *ngIf="!submitted"
+        (submit)="onSubmit($event)"
+        name="contact"
+        method="POST"
+        data-netlify="true"
+        netlify-honeypot="bot-field"
+        class="max-w-xl mx-auto space-y-6"
+      >
         <input type="hidden" name="form-name" value="contact" />
+        <p style="display:none">
+          <label>No rellenar: <input name="bot-field" /></label>
+        </p>
+
         <div>
           <label for="name" class="block mb-2 text-sm font-medium text-white">Nombre</label>
           <input type="text" id="name" name="name" required class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500">
@@ -17,10 +35,20 @@
           <label for="message" class="block mb-2 text-sm font-medium text-white">Mensaje</label>
           <textarea id="message" name="message" rows="4" required class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500"></textarea>
         </div>
+
+        <div *ngIf="errorMessage" class="text-red-100 bg-red-600 rounded-lg p-3 text-sm">
+          {{ errorMessage }}
+        </div>
+
         <div>
-          <button type="submit" class="w-full bg-indigo-700 text-white font-semibold py-3 px-6 rounded-lg hover:bg-indigo-500 transition duration-300">Enviar Mensaje</button>
+          <button
+            type="submit"
+            [disabled]="loading"
+            class="w-full bg-indigo-700 text-white font-semibold py-3 px-6 rounded-lg hover:bg-indigo-500 transition duration-300 disabled:opacity-60 disabled:cursor-not-allowed"
+          >
+            {{ loading ? 'Enviando...' : 'Enviar Mensaje' }}
+          </button>
         </div>
       </form>
     </div>
-
 </section>
