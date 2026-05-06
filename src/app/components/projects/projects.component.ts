@@ -9,7 +9,7 @@ import { CommonModule } from '@angular/common';
   styleUrl: './projects.component.css'
 })
 export class ProjectsComponent {
-  @ViewChild('projectVideo', { static: false }) videoRef?: ElementRef<HTMLVideoElement>;
+ // @ViewChild('projectVideo', { static: false }) videoRef?: ElementRef<HTMLVideoElement>;
   @ViewChild('imgContainer', { static: false }) imgContainer?: ElementRef<HTMLDivElement>;
   overlayVisible = false;
   overlayImageSrc: string | null = null;

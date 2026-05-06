@@ -7,7 +7,6 @@
 	background: #000;
 	cursor: zoom-in;
 	transition: transform 200ms ease-out;
-	/* configurable hover zoom (same size for all images) */
 	--hover-zoom: 1.18;
 }
 
@@ -20,12 +19,10 @@
 	transform-origin: center center;
 }
 
-/* scale the image itself on hover to avoid layout shifts */
 .project-image-container:hover img {
 	transform: scale(var(--hover-zoom));
 }
 
-/* Make layout responsive: stack on tablet and smaller */
 @media (max-width: 768px) {
 	.project-row { flex-direction: column; align-items: center; }
 	.project-image-container { width: 100%; max-width: 720px; height: 300px; }
@@ -33,7 +30,6 @@
 	.project-image-container img { object-fit: contain; height: 100%; }
 }
 
-/* Smaller screens: tighten image height */
 @media (max-width: 480px) {
 	.project-image-container { height: 220px; }
 }
@@ -43,49 +39,4 @@
 .project-image-container.zoom-active {
 	cursor: none;
 }
-
-/* Overlay that shows the full enlarged image centered on the screen */
-.image-overlay {
-	position: fixed;
-	top: 50%;
-	left: 50%;
-	transform: translate(-50%, -50%);
-	z-index: 60;
-	max-width: 90vw;
-	max-height: 90vh;
-	box-shadow: 0 10px 30px rgba(0,0,0,0.6);
-	border-radius: 8px;
-	overflow: hidden;
-	background: #111;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	padding: 8px;
-}
-
-.image-overlay img {
-	width: 100%;
-	height: 100%;
-	object-fit: contain;
-}
-
-.flex { display:flex; }
-.items-center { align-items:center; }
-.gap-2 { gap:0.5rem; }
-.px-3 { padding-left:0.75rem; padding-right:0.75rem; }
-.py-1 { padding-top:0.25rem; padding-bottom:0.25rem; }
-.rounded { border-radius:0.25rem; }
-.bg-black { background:#000; }
-.bg-indigo-600 { background:#4f46e5; }
-.bg-gray-700 { background:#374151; }
-.bg-green-600 { background:#16a34a; }
-.text-white { color:#fff; }
-.w-72 { width:18rem; }
-.h-40 { height:10rem; }
-.w-4 { width:1rem; }
-.h-4 { height:1rem; }
-.w-full { width:100%; }
-.h-full { height:100%; }
-.w-full { width:100%; }
-.h-full { height:100%; }
 
