@@ -7,5 +7,8 @@
 @layer base {
   body {
     font-family: "lato", sans-serif; /* Ejemplo de fuente global */
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
   }
 }
