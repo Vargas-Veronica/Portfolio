@@ -67,7 +67,7 @@ export class ProjectsComponent {
       description:
         'Chancho Va! es una tienda online de juegos de mesa con catálogo, filtros y carrito. Implementé el frontend con HTML, CSS y Bootstrap y la integración con APIs en Node.js; enfocado en usabilidad móvil y rendimiento.',
       tech: ['HTML', 'CSS', 'Bootstrap', 'JavaScript', 'Node.js', 'MySQL'],
-      link: 'https://ispc-desarrolladores-2-0.github.io/PFS-Ecommerce-2023/'
+      link: 'https://chancho-va.onrender.com'
     },
     {
       id: 'aceitosos',
@@ -85,7 +85,7 @@ export class ProjectsComponent {
       description:
         'Portfolio personal desarrollado en Angular y Tailwind para mostrar proyectos, demos y datos de contacto. Diseñado para ser responsivo, accesible y fácil de mantener.',
       tech: ['Angular', 'TypeScript', 'Tailwind CSS', 'HTML5', 'CSS3'],
-      link: 'https://ispc-desarrolladores-2-0.github.io/PFS-Ecommerce-2023/'
+      link: 'https://vargasveronica.netlify.app/'
     }
   ];
 
