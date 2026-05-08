@@ -1,27 +1,65 @@
-# Portfolio
+Portfolio Personal
+Sitio web de portafolio personal construido con Angular 18, Tailwind CSS y Flowbite. El proyecto está pensado como una landing / portafolio profesional con secciones de presentación, servicios, proyectos y contacto.
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.3.6.
+Tecnologías
+Angular 18
+TypeScript
+Tailwind CSS
+Flowbite
+RxJS
+Netlify (configuración de despliegue)
+Karma + Jasmine para pruebas
+Características
+SPA con enrutamiento y navegación basada en componentes
+Diseño responsive con Tailwind CSS
+Secciones principales:
+Hero
+About
+Services
+Projects
+Contact
+Header
+Footer
+Formulario de contacto con integración Netlify Forms
+Scroll automático al navegar entre rutas
+Configuración de build y despliegue para Netlify (netlify.toml)
+Estructura principal del proyecto
+app.component.ts
+app.component.html
+app.routes.ts
+header
+hero
+about
+services
+projects
+contact
+footer
+styles.css
+netlify.toml
+Instalación
+Desarrollo local
+Luego abrir:
 
-## Development server
+Build de producción
+El resultado se genera en:
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+Pruebas
+Despliegue en Netlify
+El proyecto ya incluye configuración para Netlify en netlify.toml:
 
-## Code scaffolding
+build command: ng build
+publish directory: dist/portfolio/browser
+redirect all paths a index.html para SPA
+Notas
+El formulario de contacto usa data-netlify="true" y el archivo __forms.html para la integración con Netlify Forms.
+La aplicación usa componentes standalone de Angular y RouterOutlet para enrutar las secciones.
+Cómo contribuir
+Clonar el repositorio
+Ejecutar npm install
+Crear una rama con el cambio
+Probar localmente con npm start
+Abrir un PR describiendo la mejora
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
 
-## Build
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
 
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
